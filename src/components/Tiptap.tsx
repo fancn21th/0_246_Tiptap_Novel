@@ -3,7 +3,12 @@ import "./styles.scss";
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
-import { EditorProvider, useCurrentEditor } from "@tiptap/react";
+import {
+  EditorProvider,
+  useCurrentEditor,
+  FloatingMenu,
+  BubbleMenu,
+} from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
 const MenuBar = () => {
@@ -227,6 +232,9 @@ export default () => {
       slotBefore={<MenuBar />}
       extensions={extensions}
       content={content}
-    ></EditorProvider>
+    >
+      <FloatingMenu editor={null}>This is the floating menu</FloatingMenu>
+      <BubbleMenu editor={null}>This is the bubble menu</BubbleMenu>
+    </EditorProvider>
   );
 };
